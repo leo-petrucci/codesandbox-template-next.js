@@ -1,14 +1,20 @@
-# Next.js
+# Next.js Codesandbox Projects Prettier Issue
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This repo was generated with `create-next-app` and contains a minimal reproduction of a Prettier issue within Codesandbox Projects.
 
-[Configuration](https://codesandbox.io/docs/projects/learn/setting-up/tasks) has been added to optimize it for [CodeSandbox Projects](https://codesandbox.io/p/dashboard).
+The only file that was added is at `pages/api/posts/[slug].ts`, there is also a copy at `pages/api/posts/index.ts`
 
-[![Edit in CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/github/codesandbox/codesandbox-template-next.js)
+For some reason, this file will not be formatted on save or when manually running "Format document". 
 
-## Resources
+The same file, however, will format correctly if named `index.ts`.
 
-- [CodeSandbox Projects — Docs](https://codesandbox.io/docs/projects)
-- [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
-- [Next.js — GitHub](https://github.com/vercel/next.js/)
-- [Next.js — Docs](https://nextjs.org/docs)
+Running Prettier CLI does not return any errors.
+
+### Changes
+
+From the default `create-next-app` these are the changes:
+
+- added "baseUrl" property to tsconfig
+- installed Prettier
+- added `.prettierrc`
+- added API files
